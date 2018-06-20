@@ -9,6 +9,7 @@
 .mt_15 {
   margin-top: 15px;
 }
+
 * {
   padding: 0;
   margin: 0;
@@ -117,9 +118,9 @@ a:active {
   color: #337ab7;
 }
 
-/* 表格样式 */
-.content .table.table-bordered th,
-.content .table.table-bordered td {
+
+.table.table-bordered th,
+.table.table-bordered td {
   text-align: center;
   vertical-align: middle;
 }

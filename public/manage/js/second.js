@@ -2,13 +2,11 @@
  * Created by HUCC on 2017/11/22.
  */
 $(function () {
-
   //二级分类的分页渲染功能
   var currentPage = 1;
   var pageSize = 10;
 
   function render() {
-
     //发送ajax
     $.ajax({
       type: "get",
@@ -32,7 +30,6 @@ $(function () {
             render();
           }
         });
-
       }
     });
 
@@ -62,7 +59,6 @@ $(function () {
 
       }
     });
-
 
   });
 
@@ -137,7 +133,7 @@ $(function () {
     }
   });
 
-
+  
   //给表单注册校验成功事件
   $form.on("success.form.bv", function (e) {
     e.preventDefault();
