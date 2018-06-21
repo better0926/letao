@@ -1,0 +1,46 @@
+@charset "UTF-8";
+.ct_left {
+  position: relative;
+  width: 90px;
+  height: 100%;
+  float: left;
+  background-color: pink;
+}
+.ct_left .silder {
+  text-align: center;
+}
+.silder .silder_list {
+  height: 50px;
+  line-height: 50px;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+}
+.silder_list.now {
+  border-right: transparent;
+  background-color: #fff;
+}
+/* main区域 右侧 */
+.ct_right {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+.ct_right .main {
+  padding: 5px 0;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.ct_right .main li {
+  width: 33.33%;
+  text-align: center;
+}
+.main .img img {
+  margin: 0 auto;
+  width: 62px;
+  height: 62px;
+}
+.main p {
+  padding: 10px;
+}

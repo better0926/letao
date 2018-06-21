@@ -1,0 +1,90 @@
+@charset "UTF-8";
+:root {
+  --bgc: #069;
+  --color_f: #fff;
+}
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+a {
+  display: block;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+html,body {
+  height: 100%;
+}
+.lt_container {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 45px;
+  padding-bottom: 55px;
+  width: 100%;
+  height: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  overflow: hidden;
+}
+/* 公共头部 */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bgc);
+  color: var(--color_f);
+}
+header .hd_left,
+header .hd_right{
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: var(--color_f);
+}
+
+/* content区域 滚动区域*/
+.lt_content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+
+/* 公共底部 */
+footer.lt_foot{
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bgc);
+}
+.lt_foot .foot {
+  text-align: center;
+  color: var(--color_f);
+}
+.foot.now span,
+.foot.now p{
+  color: darkorange;
+}
+.foot span {
+  margin-top: 14px;
+}
+.foot p {
+  color: var(--color_f);
+}
