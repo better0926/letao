@@ -1,0 +1,33 @@
+/* 搜索框 */
+:root {
+  --ftc: #666;
+}
+
+/* 搜索历史 */
+.lt_history {
+  padding: 10px;
+  color: var(--ftc);
+}
+.history_tlt span {
+  height: 30px;
+  line-height: 30px;
+}
+.content .wrap {
+  border: 1px dashed red;
+}
+.wrap .list {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px dashed red;  
+}
+.wrap .list:last-child{
+  border: none;
+}
+.wrap .list a {
+  padding-left: 10px;
+  color: var(--ftc);
+}
+.wrap .list .btn_delete {
+  height: 30px;
+  line-height: 30px;
+}

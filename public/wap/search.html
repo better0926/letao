@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- mui框架 -->
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <!-- 字体图标库 -->
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <!-- icon -->
+  <link rel="icon" href="favicon.ico">
+  <!-- 公共样式 -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/search.css">
+  <title>搜索中心</title>
+</head>
+<body>
+  <div class="lt_container">
+    <!-- 头部 -->
+    <header>
+      <a class="hd_left" href="index.html">
+        <span class="mui-icon mui-icon-arrowleft"></span>
+      </a>
+      <div class="hd_title">搜索中心</div>
+      <a class="hd_right" href="javascript:;"></a>
+    </header>
+
+    <!-- 中间内容区域 -->
+    <section class="lt_content">
+      <!-- 滚动结构  上拉下拉效果 -->
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!-- 内容区域 -->
+          <div class="lt_search mui-clearfix">
+            <input type="text" class="txt mui-pull-left" placeholder="请输入搜索关键字">
+            <button class="btn-search btn mui-btn-primary mui-pull-right">搜索</button>
+          </div>
+          <!-- 历史记录 -->
+          <div class="lt_history">
+            <!-- <div class="history_tlt mui-clearfix">
+              <span class="tlt_left mui-pull-left">搜索历史</span>
+              <span class="all_delete fa fa-trash mui-pull-right">清空记录</span>
+            </div> -->
+            <!-- 历史记录列表 -->
+            <!-- <div class="content">
+              <ul class="wrap">
+                <li class="list mui-clearfix">
+                  <a href="#" class="mui-pull-left">我是一条历史记录</a>
+                  <span class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"></span>
+                </li>
+                <li class="list mui-clearfix">
+                  <a href="#" class="mui-pull-left">我是一条历史记录</a>
+                  <span class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"></span>
+                </li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="lt_foot">
+      <a href="index.html" class="foot">
+        <span class="fa fa-home"></span>
+        <p class="foot_txt">首页</p>
+      </a>
+      <a href="category.html" class="foot">
+        <span class="fa fa-bars"></span>
+        <p class="foot_txt">分类</p>
+      </a>
+      <a href="cart.html" class="foot">
+        <span class="fa fa-shopping-cart"></span>
+        <p class="foot_txt">购物车</p>
+      </a>
+      <a href="user.html" class="foot">
+        <span class="fa fa-user"></span>
+        <p class="foot_txt">会员中心</p>
+      </a>
+    </footer>
+  </div>
+  <!-- 历史记录列表模板 -->
+  <script type="text/html" id="historyTpl">
+    {{ if rows.length === 0}}
+      <p>没有历史记录</p>
+    {{ else }}
+      <div class="history_tlt mui-clearfix">
+      <span class="tlt_left mui-pull-left">搜索历史</span>
+      <span class="all_delete fa fa-trash mui-pull-right">清空记录</span>
+    </div>
+    <!-- 历史记录列表 -->
+    <div class="content">
+      <ul class="wrap">
+        {{ each rows val index }}
+        <li class="list mui-clearfix">
+          <a href="searchlist.html?key={{ val }}" class="mui-pull-left">{{ val }}</a>
+          <span class="mui-icon mui-icon-closeempty mui-pull-right btn_delete" data-index="{{ index }}"></span>
+        </li>
+        {{ /each }}
+      </ul>
+    </div>
+    {{ /if }}
+    
+  </script>
+
+  <script src="lib/mui/js/mui.js"></script>
+  <script src="lib/zepto/zepto.min.js"></script>
+  <script src="lib/artTemplate/template-web.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/search.js"></script>
+</body>
+
+</html>

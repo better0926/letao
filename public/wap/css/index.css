@@ -10,30 +10,3 @@
   width: 33.33%;
   float: left;
 }
-
-/* 产品列表 */
-.product .pro {
-  display: flex;
-  align-content: space-between;
-  justify-content: center;
-}
-.pro .pro_list {
-  padding: 10px;
-  width: 48%;
-  text-align: center;
-  border: 1px solid #ccc;
-  background-color: var(--color_f);
-}
-.pro_list:nth-child(odd){
-  margin-right: 4%;
-}
-.pro_list .price {
-  margin-bottom: 10px;
-}
-.pro_list .price .new_price {
-  color: red;
-}
-.pro_list .price .old_price {
-  color: #ccc;
-  text-decoration: line-through;
-}

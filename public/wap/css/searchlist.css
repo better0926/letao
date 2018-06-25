@@ -1,0 +1,19 @@
+/* 排序 */
+.sort {
+  background-color: #eee;
+}
+.sort .sort_list {
+  width: 25%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.sort .sort_list.now a {
+  color: darkorange;
+}
+.sort .sort_list a {
+  color: #666;
+}
+.pro_list p {
+  height: 39px;
+}

@@ -91,7 +91,7 @@ $(function () {
 
   //图片上传功能
   $("#fileupload").fileupload({
-     dataType: "json",
+     //dataType: "json",
      done: function (e, data) {
       console.log(data);
 
@@ -108,8 +108,6 @@ $(function () {
       //1. img_box中添加一张img
       //图片上传的结果已经存到数组中
       $(".img_box").append('<img src=" ' + data.result.picAddr +'" width="100" alt="">')
-      //$(".img_box img").attr("src", data.result.picAddr);
-      $("#fileupload").data("url", data.result.picAddr);
 
       //手动让图片校验通过
       if(imgs.length === 3){
@@ -214,9 +212,10 @@ $(function () {
     e.preventDefault();
     var parm = $("form").serialize();
     console.log(parm);
-    parm += "&picName1=" + imgs[0].picName + "&picAddr1=" + imgs[0].picAddr1;
-    parm += "&picName2=" + imgs[1].picName + "&picAddr2=" + imgs[1].picAddr1;
-    parm += "&picName3=" + imgs[2].picName + "&picAddr3=" + imgs[2].picAddr1;
+    
+    parm += "&picName1=" + imgs[0].picName + "&picAddr1=" + imgs[0].picAddr;
+    parm += "&picName2=" + imgs[1].picName + "&picAddr2=" + imgs[1].picAddr;
+    parm += "&picName3=" + imgs[2].picName + "&picAddr3=" + imgs[2].picAddr;
     $.ajax({
       type: "post",
       url: "/product/addProduct",
@@ -225,20 +224,23 @@ $(function () {
         console.log(info);
         if(info.success){
           //让page回到第一页
-          pgae = 1;
+          page = 1;
           //重新渲染
           render();
           //隐藏模态框
           $("#adddModal").modal("hide");
-          //重置数组
-          imgs = [];
+          
           //dropdown-text的text替换成默认文本
           $(".dropdown-text").text("请二级分类");
           //重置表单
           $("form").data("bootstrapValidator").resetForm("true");
           $(".img_box img").remove();
+
+          //重置数组
+          imgs = [];
         };
       }
     });
   });
+  
 });

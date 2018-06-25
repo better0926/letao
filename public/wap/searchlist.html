@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- mui框架 -->
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <!-- 字体图标库 -->
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <!-- icon -->
+  <link rel="icon" href="favicon.ico">
+  <!-- 公共样式 -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/searchlist.css">
+  <title>乐淘云购-搜索中心</title>
+</head>
+
+<body>
+  <div class="lt_container">
+    <!-- 头部 -->
+    <header>
+      <a class="hd_left" href="index.html">
+        <span class="mui-icon mui-icon-arrowleft"></span>
+      </a>
+      <div class="hd_title">商品列表</div>
+      <a class="hd_right" href="javascript:;"></a>
+    </header>
+
+    <!-- 中间内容区域 -->
+    <section class="lt_content">
+      <!-- 滚动结构  上拉下拉效果 -->
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!-- 内容区域 搜索框 -->
+          <div class="lt_search mui-clearfix">
+            <input type="text" class="txt mui-pull-left" placeholder="请输入搜索关键字">
+            <button class="btn-search btn mui-btn-primary mui-pull-right">搜索</button>
+          </div>
+          <!-- 排序 sort-->
+          <div class="lt_sort">
+            <ul class="sort mui-clearfix">
+              <li class="sort_list mui-pull-left">
+                <a href="javascript:;">上架时间
+                  <span class="fa fa-angle-down"></span>
+                </a>
+              </li>
+              <li class="sort_list mui-pull-left" data-type="price">
+                <a href="javascript:;">价格
+                  <span class="fa fa-angle-down"></span>
+                </a>
+              </li>
+              <li class="sort_list mui-pull-left" data-type="num">
+                <a href="javascript:;">库存
+                  <span class="fa fa-angle-down"></span>
+                </a>
+              </li>
+              <li class="sort_list mui-pull-left ">
+                <a href="javascript:;">折扣
+                  <span class="fa fa-angle-down"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- 产品列表 -->
+          <div class="product">
+            
+            <ul class="pro">
+              <!--
+              <li class="pro_list">
+                <a href="#">
+                  <div class="pro_img">
+                    <img src="images/product.jpg" alt="">
+                  </div>
+                  <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700</p>
+                  <div class="price">
+                    <span class="new_price">&yen;666</span>
+                    <span class="old_price">&yen;888</span>
+                  </div>
+                  <button class="btn mui-btn-primary">立即购买</button>
+                </a>
+              </li>-->
+            </ul>
+            
+            <!-- 正在加载效果 -->
+            <!-- <div class="loading"></div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="lt_foot">
+      <a href="index.html" class="foot">
+        <span class="fa fa-home"></span>
+        <p class="foot_txt">首页</p>
+      </a>
+      <a href="category.html" class="foot">
+        <span class="fa fa-bars"></span>
+        <p class="foot_txt">分类</p>
+      </a>
+      <a href="cart.html" class="foot">
+        <span class="fa fa-shopping-cart"></span>
+        <p class="foot_txt">购物车</p>
+      </a>
+      <a href="user.html" class="foot">
+        <span class="fa fa-user"></span>
+        <p class="foot_txt">会员中心</p>
+      </a>
+    </footer>
+  </div>
+ <script type="text/html" id="proTpl">
+    {{ each data val i }}
+    <li class="pro_list">
+      <a href="product.html?productId={{ val.id }}">
+        <div class="pro_img">
+          <img src="{{ val.pic[0].picAddr}}" alt="">
+        </div>
+        <p class="mui-ellipsis-2">{{ val.proName }}</p>
+        <div class="price">
+          <span class="new_price">&yen;{{ val.price }}</span>
+          <span class="old_price">&yen;{{ val.oldPrice }}</span>
+        </div>
+        <button class="btn mui-btn-primary">立即购买</button>
+      </a>
+    </li> 
+    {{ /each }}
+</script>
+
+  <script src="lib/mui/js/mui.js"></script>
+  <script src="lib/zepto/zepto.min.js"></script>
+  <script src="lib/artTemplate/template-web.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/searchlist-complete.js"></script>
+</body>
+
+</html>
